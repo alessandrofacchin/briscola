@@ -1,12 +1,12 @@
+FROM ubuntu:18.04
+RUN apt update
+RUN apt install -y git
+
 FROM python:3.8-slim
 
 RUN adduser --disabled-login briscola
 
 WORKDIR /home/briscola
-
-FROM ubuntu:18.04
-RUN apt update
-RUN apt install -y git
 
 COPY requirements.txt requirements.txt
 RUN python -m venv venv
