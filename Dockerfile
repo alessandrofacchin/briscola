@@ -4,6 +4,10 @@ RUN adduser --disabled-login briscola
 
 WORKDIR /home/briscola
 
+FROM ubuntu:18.04
+RUN apt update
+RUN apt install -y git
+
 COPY requirements.txt requirements.txt
 RUN python -m venv venv
 RUN venv/bin/pip install -r requirements.txt
