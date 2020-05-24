@@ -1,0 +1,7 @@
+[
+  "tests/test_game.py::test_card",
+  "tests/test_game.py::test_play",
+  "tests/test_game.py::test_features",
+  "tests/test_game.py::test_episode",
+  "tests/utils/test_absolute_truth.py::test_absolute_truth"
+]

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Karma" rel="stylesheet">
+<link href="https://www.w3schools.com/lib/w3-theme-blue-grey.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+    .w3-bar-block .w3-bar-item {padding:20px}
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{title}} - BriscolaBot</title>
+    {% else %}
+    <title>BriscolaBot</title>
+    {% endif %}
+</head>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
+     id="mySidebar" style="display:none;z-index:2;width:40%;min-width:300px">
+    <span class="w3-button w3-white w3-display-topright w3-round w3-margin"  href="javascript:void(0)" onclick="w3_close()">
+            <i class="fa fa-remove"></i>
+        </span>
+    {% if current_user.is_anonymous %}
+    <h3 class="w3-bar-item">Hello!</h3>
+    {% else %}
+    <h3 class="w3-bar-item">Hello {{current_user.username}}!</h3>
+    {% endif %}
+    <a class="w3-bar-item w3-button" href="{{ url_for('play') }}" onclick="w3_close()">Play</a>
+    {% if current_user.is_anonymous %}
+    <a class="w3-bar-item w3-button" href="{{ url_for('login') }}" onclick="w3_close()">Login</a>
+    {% else %}
+    <a class="w3-bar-item w3-button" href="{{ url_for('logout') }}" onclick="w3_close()">Logout</a>
+    {% endif %}
+</nav>
+
+{% block content %}{% endblock %}
+
+<!-- Top menu -->
+<div class="w3-top">
+
+
+    <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+        <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+        <div class="w3-button w3-padding-16 w3-right" onclick="">?</div>
+        <div class="w3-center w3-padding-16">BriscolaBot</div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<!-- Footer -->
+<footer>
+    {% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="w3-display-container" style="position:absolute;bottom:0;left:50%;margin-bottom:50px;transform: translate(-50%, 0%);width: 98%;">
+    {% for message in messages %}
+    <div class="w3-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin">
+        <span class="w3-button w3-theme-l3 w3-display-topright w3-round w3-margin"  onclick="this.parentElement.style.display='none'">
+            <i class="fa fa-remove"></i>
+        </span>
+            <div class="w3-padding">{{ message }}</div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+    <div class="w3-container w3-theme-d5"
+        style="position: fixed;left: 0;bottom: 0;width: 100%;height: 50px;margin-top: -50px;flex-shrink: 0;">
+
+    <p>Sviluppato e supportato da Alessandro Facchin (GitHub: <a href="https://github.com/alessandrofacchin"
+                                                                 target="_blank">alessandrofacchin</a>)</p>
+    </div>
+</footer>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

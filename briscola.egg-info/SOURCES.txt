@@ -1,0 +1,7 @@
+README.md
+setup.py
+briscola.egg-info/PKG-INFO
+briscola.egg-info/SOURCES.txt
+briscola.egg-info/dependency_links.txt
+briscola.egg-info/requires.txt
+briscola.egg-info/top_level.txt

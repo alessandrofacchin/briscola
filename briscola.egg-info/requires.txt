@@ -1,0 +1,16 @@
+gym
+pytest
+numpy
+torch
+flask
+flask-wtf
+wtforms
+flask-sqlalchemy
+flask-migrate
+flask-login
+werkzeug
+email-validator
+flask-babel
+
+[test]
+pytest
