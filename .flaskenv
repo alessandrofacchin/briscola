@@ -1,1 +1,1 @@
-FLASK_APP=user_interface.py
+FLASK_APP=briscola_bot.py
