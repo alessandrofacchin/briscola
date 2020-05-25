@@ -16,7 +16,7 @@ COPY app.db ./
 COPY briscola_bot.py config.py boot.sh ./
 RUN chmod +x boot.sh
 
-ENV FLASK_APP user_interface.py
+ENV FLASK_APP briscola_bot.py
 
 RUN chown -R briscola_bot:briscola_bot ./
 USER briscola_bot
