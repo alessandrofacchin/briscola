@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
-RUN apt update
-RUN apt install -y git
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install --assume-yes git
 
 FROM python:3.8-slim
 
