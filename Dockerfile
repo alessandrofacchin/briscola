@@ -1,8 +1,3 @@
-FROM ubuntu:18.04
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install --assume-yes git
-
 FROM python:3.8-slim
 
 RUN adduser --disabled-login briscola
