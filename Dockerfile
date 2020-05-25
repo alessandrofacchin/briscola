@@ -12,6 +12,7 @@ RUN venv/bin/pip install gunicorn
 COPY app app
 COPY migrations migrations
 COPY briscola briscola
+COPY app.db ./
 COPY briscola_bot.py config.py boot.sh ./
 RUN chmod +x boot.sh
 
