@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import numpy as np
 from torch import Tensor
+from briscola.interface.command_line import UserInterface
 
 
 class Agent(ABC):
