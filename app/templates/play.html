@@ -24,14 +24,14 @@
                 <div>
                     <div class="w3-half w3-center">
                         <img alt="{{last_play['cards'][0].get_name()}}" class="w3-center"
-                             src="{{url_for('static', filename=last_play['cards'][0].get_graphic())}}"
-                             style="width:50px;height:125px;object-fit:cover;border:3px solid black;">
+                             src="{{last_play['cards'][0].get_graphic()}}"
+                             style="background-color:LightGray;width:50px;height:125px;object-fit:cover;border:3px solid black;">
                         <p class="w3-center">Giocatore</p>
                     </div>
                     <div class="w3-half w3-center">
                         <img alt="{{last_play['cards'][1].get_name()}}" class="w3-center"
-                             src="{{url_for('static', filename=last_play['cards'][1].get_graphic())}}"
-                             style="width:50px;height:125px;object-fit:cover;border:3px solid black;">
+                             src="{{last_play['cards'][1].get_graphic()}}"
+                             style="background-color:LightGray;width:50px;height:125px;object-fit:cover;border:3px solid black;">
                         <p class="w3-center">Avversario</p>
                     </div>
                 </div>
@@ -41,8 +41,8 @@
                 <div class="w3-container">
                     <h3 class="w3-center">Briscola</h3>
                     <p class="w3-center"><img alt="{{middle_card.get_name()}}"
-                                              src="{{url_for('static', filename=middle_card.get_graphic())}}"
-                                              style="width:120px;height:300px;object-fit:cover;border:2px solid black;">
+                                              src="{{middle_card.get_graphic()}}"
+                                              style="background-color:LightGray;width:120px;height:300px;object-fit:cover;border:2px solid black;">
                     </p>
                     <h5 class="w3-center">{{middle_card.get_name()}}</h5>
                     <hr>
@@ -66,8 +66,8 @@
                         <div class="w3-row-padding w3-padding-16 w3-center" id="cards">
                             {% for card in hand_cards %}
                             <div class="w3-third">
-                                <img alt="{{card.get_name()}}" src="{{url_for('static', filename=card.get_graphic())}}"
-                                     style="width:150px;height:375px;object-fit:cover;border:3px solid black;">
+                                <img alt="{{card.get_name()}}" src="{{card.get_graphic()}}"
+                                     style="background-color:LightGray;width:150px;height:375px;object-fit:cover;border:3px solid black;">
                                 <h5>{{card.get_name()}}</h5>
                                 <button class="w3-button w3-block w3-green w3-section" title="Gioca carta"><i
                                         class="fa fa-check"></i></button>
@@ -103,8 +103,8 @@
                 <h3 class="w3-center">Sei il 2<sup>o</sup> giocatore</h3>
                 <p class="w3-center">
                     <img alt="{{played_card.get_name()}}"
-                         src="{{url_for('static', filename=played_card.get_graphic())}}"
-                         style="width:100px;height:250px;object-fit:cover;border:2px solid black;"></p>
+                         src="{{played_card.get_graphic()}}"
+                         style="background-color:LightGray;width:100px;height:250px;object-fit:cover;border:2px solid black;"></p>
                 <h5 class="w3-center">{{played_card.get_name()}}</h5>
                 {% else %}
                 <h3 class="w3-center">Sei il 1<sup>o</sup> giocatore</h3>

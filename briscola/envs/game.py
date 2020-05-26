@@ -4,6 +4,7 @@ import enum
 import numpy as np
 from torch import Tensor
 from os import path
+import json
 
 
 class Card(ABC):
@@ -22,9 +23,13 @@ class Card(ABC):
             suit of the card
         """
 
+        with open('briscola/interface/card_links.json') as f:
+            card_links = json.load(f)
+
         self.number = BriscolaNumber(number)
         self.suit = BriscolaSuit(suit)
         self.points = self.number.get_value()
+        self.link = card_links['%d_%02d' % (self.suit.value, self.number.value)]
 
     def is_briscola(self, env) -> bool:
         if self.suit == env.briscola:
@@ -55,7 +60,7 @@ class Card(ABC):
         return '%s di %s' % (self.number.name, self.suit.name)
 
     def get_graphic(self) -> str:
-        return '%d_%d.JPG' % (self.suit.value, self.number.value)
+        return self.link
 
 
 class Table(ABC):

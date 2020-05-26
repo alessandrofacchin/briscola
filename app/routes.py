@@ -28,6 +28,7 @@ def play():
         last_play['cards'] = tab.plays[-1][1:]
     else:
         last_play = None
+
     return render_template('play.html', middle_card=tab.middle_card, remaining_cards=len(tab.deck),
                            points=[int(tab.points[:, 0]), int(tab.points[:, 1])], hand_cards=tab.player_1,
                            played_card=tab.card_played, last_play=last_play)
